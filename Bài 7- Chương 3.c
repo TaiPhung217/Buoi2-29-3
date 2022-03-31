@@ -1,3 +1,4 @@
+//Bài 7- chương3
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,21 +60,13 @@ void removeDupes()
 {
     struct ListNode* tmp;
     struct ListNode* tmp2;
-    for(tmp=list;tmp->next!=NULL;tmp=tmp->next){
-        for(tmp2=tmp->next;tmp2->next!=NULL;tmp2=tmp2->next){
+    for(tmp=list;tmp!=NULL;tmp=tmp->next){
+        for(tmp2=tmp->next;tmp2!=NULL;tmp2=tmp2->next){
             if(tmp2->info == tmp->info){
                 tmp->next = tmp2->next;
             }
         }
     }
-}
-
-void inDanhSach()
-{
-	struct ListNode* tmp;
-	for(tmp=list;tmp!=NULL;tmp=tmp->next){
-        printf("%d ",tmp->info);
-	}
 }
 
 void taoDanhSach()
@@ -85,6 +78,20 @@ void taoDanhSach()
 	}
 }
 
+void inDanhSach()
+{
+	struct ListNode* tmp;
+	if(list==NULL)
+        taoDanhSach();
+	for(tmp=list;tmp!=NULL;tmp=tmp->next){
+        printf("%d ",tmp->info);
+	}
+}
+
+/**
+8
+1 1 2 2 3 3 4 4
+**/
 
 int main()
 {
